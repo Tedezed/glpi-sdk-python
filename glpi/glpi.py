@@ -204,7 +204,7 @@ class GlpiService(object):
         full_url = self.url + '/initSession'
         auth = None
 
-        headers = {"App-Token": self.app_token,
+        headers = {"App_Token": self.app_token,
                    "Content-Type": "application/json"}
 
         if self.token_auth is not None:
@@ -237,7 +237,7 @@ class GlpiService(object):
             auth = None
 
             headers = {
-                    "App-Token": self.app_token,
+                    "App_Token": self.app_token,
                     "Content-Type": "application/json",
                     "Session-Token": self.session
                 }
@@ -310,7 +310,7 @@ class GlpiService(object):
             raise GlpiException("Unable to get Session token: {}".format(e))
 
         if self.app_token is not None:
-            headers.update({'App-Token': self.app_token})
+            headers.update({'App_Token': self.app_token})
 
         headers.update(input_headers)
 
